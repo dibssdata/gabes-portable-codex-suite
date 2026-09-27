@@ -21,7 +21,7 @@ installer, plugin, or account credentials belong in this distribution.
 | 5 | Both-profile fixtures and failure cases | completed | Everyday primary / high |
 | 6 | Independent privacy and release assurance | completed | Complex primary / high + nonauthor reviewer |
 | 7 | Private remote and hosted validation | completed | Everyday primary / medium |
-| 8 | Public visibility and versioned release | awaiting_publication_approval | Complex primary / high + owner approval |
+| 8 | Public visibility and versioned release | completed | Complex primary / high + owner approval |
 
 ## Decisions
 
@@ -58,20 +58,21 @@ Version `1.1.2` manifest digest:
 `9afd96adbdc139381e4ca850610edc28c854bf5c50757ea95508f777340fe07d`.
 Hosted validation passed on the independent root commit
 `66b9258fb7d3df3ea0c4179f80ea4712caf42e2a` (run `36345593576`).
-The remote is private. Draft release `v1.1.2` contains exactly the bootstrap,
-MIT license, and `SHA256SUMS.txt`; all three downloaded assets match local bytes.
+Hosted validation also passed on release commit
+`54e9179b2d5551636f26690355cf710bb20e0d3b` (run `36345664995`).
+The repository is public. Release `v1.1.2` contains exactly the bootstrap,
+MIT license, and `SHA256SUMS.txt`; all three anonymous downloads match local bytes.
 The bootstrap download hash is
 `0d873c38a2019d94edb56e7e37cee56b046200195d21aae9beab4b564de12bff`.
-Public visibility and release publication await owner approval of this result.
+The owner explicitly approved publication. Release `v1.1.2` was published on
+2026-09-27 at 20:01:35 UTC, and its tag resolves to the reviewed release commit
+`54e9179b2d5551636f26690355cf710bb20e0d3b`.
 
-## Resume
+## Completion
 
-After explicit publication approval, confirm the remote identity and visibility,
-green validation for the current commit, and unchanged draft asset hashes.
-Make the repository public and publish the existing draft release, then verify
-public download access and checksum equality. Record the published tag and
-completion here. Do not mark distribution complete while publication is pending.
+All eight checkpoints are complete. Public API access, the exact tag commit,
+and all three asset downloads were verified without authentication. The user can
+share the repository README and versioned release with a friend.
 
-Changing visibility back to private cannot recall copies already downloaded.
-If approval is withheld, leave the reviewed repository private and the release
-as a draft. The package is ready for this decision without further setup choices.
+Future changes follow `CONTRIBUTING.md` and use a new release version when
+embedded templates change. Preserve the published assets and their checksums.

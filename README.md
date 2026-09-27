@@ -6,9 +6,10 @@ Choose a small core or add a workflow skill and an assurance reviewer during set
 
 ## Start in about a minute
 
-1. Download `codex-suite-bootstrap-v1.1.2.md` and `LICENSE` from this repository's
-   **Releases** page. Until a release is published, open
-   [the bootstrap](bootstrap/codex_suite_bootstrap.md), choose **Raw**, and save it.
+1. Download `codex-suite-bootstrap-v1.1.2.md` and `LICENSE` from the
+   [v1.1.2 release](https://github.com/dibssdata/gabes-portable-codex-suite/releases/tag/v1.1.2).
+   Alternatively, open [the bootstrap](bootstrap/codex_suite_bootstrap.md),
+   choose **Raw**, and save it.
 2. Open **your own project folder** in a local Codex client. Make that folder the
    primary project. Save the downloaded file where Codex can read it.
 3. Give Codex the prompt below, with the file attached or its path identified.
