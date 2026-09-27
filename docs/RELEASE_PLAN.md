@@ -20,8 +20,8 @@ installer, plugin, or account credentials belong in this distribution.
 | 4 | Read-only validator and CI | completed | Everyday primary / high |
 | 5 | Both-profile fixtures and failure cases | completed | Everyday primary / high |
 | 6 | Independent privacy and release assurance | completed | Complex primary / high + nonauthor reviewer |
-| 7 | Private remote and hosted validation | in_progress | Everyday primary / medium |
-| 8 | Public visibility and versioned release | pending | Complex primary / high + owner approval |
+| 7 | Private remote and hosted validation | completed | Everyday primary / medium |
+| 8 | Public visibility and versioned release | awaiting_publication_approval | Complex primary / high + owner approval |
 
 ## Decisions
 
@@ -56,10 +56,22 @@ target-setup check. These limits do not imply runtime sandbox guarantees.
 
 Version `1.1.2` manifest digest:
 `9afd96adbdc139381e4ca850610edc28c854bf5c50757ea95508f777340fe07d`.
-Hosted validation and public-release authorization remain pending.
+Hosted validation passed on the independent root commit
+`66b9258fb7d3df3ea0c4179f80ea4712caf42e2a` (run `36345593576`).
+The remote is private. Draft release `v1.1.2` contains exactly the bootstrap,
+MIT license, and `SHA256SUMS.txt`; all three downloaded assets match local bytes.
+The bootstrap download hash is
+`0d873c38a2019d94edb56e7e37cee56b046200195d21aae9beab4b564de12bff`.
+Public visibility and release publication await owner approval of this result.
 
 ## Resume
 
-Push only the reviewed files to the new private remote, verify hosted checks and
-draft-release asset hashes, then prepare the exact public-release approval summary.
-Do not mark public distribution complete while visibility or release is pending.
+After explicit publication approval, confirm the remote identity and visibility,
+green validation for the current commit, and unchanged draft asset hashes.
+Make the repository public and publish the existing draft release, then verify
+public download access and checksum equality. Record the published tag and
+completion here. Do not mark distribution complete while publication is pending.
+
+Changing visibility back to private cannot recall copies already downloaded.
+If approval is withheld, leave the reviewed repository private and the release
+as a draft. The package is ready for this decision without further setup choices.
